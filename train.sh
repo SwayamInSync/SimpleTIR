@@ -302,4 +302,5 @@ PYTHONUNBUFFERED=1 python -m recipe.simpletir.main_simpletir \
     actor_rollout_ref.actor.mask_void_turns=$MASK_VOID_TURNS \
     +trainer.val_only=$VAL_ONLY \
     +trainer.output_acc_to_file=$OUTPUT_ACC_TO_FILE \
+    ${HYDRA_OVERRIDES:-} \
     | tee -a $LOG_FILE_PATH

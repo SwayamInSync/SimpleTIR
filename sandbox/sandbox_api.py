@@ -136,7 +136,7 @@ async def _run_in_firejail(code: str, timeout: float, stdin_data: str = "") -> d
 # ---------------- FastAPI wiring ----------------
 
 app = FastAPI()
-POOL = asyncio.Semaphore(200)  # gate per-process concurrency; tune to your CPU
+POOL = asyncio.Semaphore(100)  # gate per-process concurrency; tune to your CPU
 
 
 @app.post("/faas/sandbox/", response_model=RunResult)

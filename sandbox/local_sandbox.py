@@ -85,7 +85,7 @@ async def single_sandbox(
 async def parallel_sandbox(
     tasks: List[str],
     stdin_list: List[str] = None,
-    num_processes: int = 200,
+    num_processes: int = 100,
 ) -> Tuple[List[bool], List[str], List[str]]:
     """Execute multiple snippets concurrently and aggregate results.
 
