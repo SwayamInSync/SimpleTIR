@@ -1,4 +1,4 @@
-export MODEL_PATH="/workspace/SimpleTIR/models/Qwen/Qwen2.5-7B"
+export MODEL_PATH="Qwen"
 export DATA_PATH="/workspace/SimpleTIR/datasets/"
 export CHECKPOINT_PATH=checkpoints
 export LOG_PATH=logs
@@ -17,4 +17,6 @@ bash train.sh \
   --train_batch_size 512 \
   --val_sample_size 50 \
   --n_val 16 \
+  --mask_void_turns False \
   --train_dataset "simplelr_math_35/train deepscaler/train"
+  # --mask_tool_output False \

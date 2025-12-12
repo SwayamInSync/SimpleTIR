@@ -145,6 +145,9 @@ class FSDPVLLMShardingManager(BaseShardingManager):
         # TODO: Current impl doesn't consider FSDP with torch micro-dp
         if vllm_version in ('0.3.1', '0.4.2', '0.5.4', '0.6.3'):
             group = vllm_ps.get_tensor_model_parallel_group()
+        elif vllm_version is None:
+            # vLLM >= 0.7.0 uses get_tp_group() instead of get_tensor_model_parallel_group()
+            group = vllm_ps.get_tp_group().device_group
         else:
             group = vllm_ps.get_tensor_model_parallel_group().device_group
 
