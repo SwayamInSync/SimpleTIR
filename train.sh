@@ -171,6 +171,7 @@ while [[ "$#" -gt 0 ]]; do
     --val_only) VAL_ONLY="$2"; shift 2 ;;
     --log_val_generations) LOG_VAL_GENERATIONS="$2"; shift 2 ;;
     --output_acc_to_file) OUTPUT_ACC_TO_FILE="$2"; shift 2 ;;
+    --val_before_train) VAL_BEFORE_TRAIN="$2"; shift 2 ;;
     *)
       echo "Unknown option: $1"
       exit 1

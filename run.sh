@@ -20,6 +20,10 @@ bash train.sh \
   --train_batch_size 512 \
   --val_sample_size 50 \
   --n_val 8 \
+  --val_before_train False \
+  --test_freq 9999 \
   --mask_void_turns False \
-  --train_dataset "simplelr_math_35/train deepscaler/train"
+  --train_dataset "simplelr_math_35/train"
+  # Use only simplelr_math_35 (8.5k samples) for faster experiments
+  # Full dataset: "simplelr_math_35/train deepscaler/train" (48k samples)
   # --mask_tool_output False \
